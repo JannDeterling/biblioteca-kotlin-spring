@@ -14,7 +14,7 @@ class BookServiceImpl(@Autowired private val bookRepository: BookRepository) : B
         return book
     }
 
-    override fun getAllBooksAvailable(): List<Book> = bookRepository.findAll().filter { book -> !book.isCheckedOut() }
+    override fun getAllBooksAvailable(): List<Book> = bookRepository.findAll().filter { !it.isCheckedOut() }
 
 
     override fun getSpecificBook(title: String): Book? = bookRepository.findOneByTitle(title)

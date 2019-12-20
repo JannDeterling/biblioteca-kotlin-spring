@@ -13,12 +13,12 @@ class UserRepositoryImpl: UserRepository {
 
     override fun findAll(): List<User> = users
 
-    override fun findOneById(id: Long): User? = users.firstOrNull {user -> user.getId() == id}
+    override fun findOneById(id: Long): User? = users.firstOrNull { it.getId() == id}
 
-    override fun findOneByName(userName: String): User? = users.firstOrNull { user -> user.username == userName }
+    override fun findOneByName(userName: String): User? = users.firstOrNull { it.username == userName }
 
     override fun save(entity: User) {
-        if (users.none { user -> user.getId() == entity.getId() }){
+        if (users.none { it.getId() == entity.getId() }){
             users.add(entity)
         }
     }
