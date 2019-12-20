@@ -3,7 +3,7 @@ package com.thoughtworks.biblioteca.book
 import java.time.Year
 
 interface BookService {
-    fun createBook(title: String, author: String, publishedYear: Year): Book
+    fun createBook(title: String, author: String, publishedYear: Year, description: String, image: String): Book
     fun getAllBooksAvailable(): List<Book>
     fun getSpecificBook(title: String): Book?
     fun getSpecificBook(id: Long): Book?

@@ -8,8 +8,8 @@ import kotlin.random.Random
 @Service
 class BookServiceImpl(@Autowired private val bookRepository: BookRepository) : BookService {
 
-    override fun createBook(title: String, author: String, publishedYear: Year): Book {
-        val book = Book(generateId(), title, author, publishedYear, false)
+    override fun createBook(title: String, author: String, publishedYear: Year, description: String, image: String): Book {
+        val book = Book(generateId(), title, author, publishedYear, description, image, isCheckedOut = false)
         bookRepository.save(book)
         return book
     }
